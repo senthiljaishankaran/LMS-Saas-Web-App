@@ -1,0 +1,44 @@
+Initialising Backend
+-> npm init -y
+-> npm i bcryptjs cookie-parser cors dotenv express ioredis jsonwebtoken mongoose
+    Above dependencies are used at production also so they are installed as prod dependency
+-> npm i --save-dev @types/bcryptjs @types/cookie-parser @types/cors @types/express 
+    @types/jsonwebtoken @types/node ts-node-dev typescript
+
+Note:
+    refer chatgpt chat history to know the detailed  explanation of each and every dependencies described above,below i have noted some only
+
+    creating a typescript config file:
+        npx tsc --init (this will generate a tsconfig.json file)
+
+    bcrypt:
+        bcrypt is a password hashing function designed to be slow and computationally intensive, making it more resistant to brute-force attacks. 
+        It is commonly used to securely store passwords in databases. 
+        The name "bcrypt" stands for "Blowfish crypt," as it was originally based on the Blowfish encryption algorithm.
+
+        difference b/t bcryptjs and bcrypt:
+            bcrptjs is implemented using javascript and not on c binding where the bcrypt is implemented using the native c binding so this is fater than bcryptjs
+    
+    what is @types/dependency means?
+        @types/express or any dependecy is dependency that helps typescript understand the types of the class, function and objects used from the module,also @types/ should only be installed in dev dependency environment
+
+    cookie-parser:
+        cookie-parser is a middleware that helps parse HTTP request cookie
+
+    Cross Object resource sharing(CORS):
+        Normally in any browser like chrome or firefox the request from one domain can't access the resource form the other domain, CORS on other hand used to relax this rule in a controlled way
+            working:
+                In the request header we pass the "Allow-Control-Access-Origin" so that the "same-origin" policy in relaxed as it allows the cors with this type of header
+    
+    JWT:    
+        JSON Web Token (JWT) is an open standard that defines a compact and URL-safe way to securely transmit information as a JSON object between parties,JWT is often used to secure RESTful APIs because it can be used to authenticate a client that wants to access the APIs.
+    
+    ts-node:
+        It is a typescript compiler used to compile the typescript file to javascript file on the fly without the need for the separate step
+            ie : 'npx tsc' will convert ts to js file but ts-node helps in doing it on the fly
+        
+        diff b/t ts-node & ts-node-dev:
+            ts-node-dev dependency is a extension of ts-node feature that does the job of the ts-node automatically whenever there is change in the code is detected
+    
+    ioredis:
+        Popular Node.js library used for working with Redis, which is an in-memory data structure store,redis is often used as a caching mechanism, message broker, and general-purpose key-value store. 
