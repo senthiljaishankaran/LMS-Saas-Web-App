@@ -1,7 +1,9 @@
 Initialising Backend
 -> npm init -y
--> npm i bcryptjs cookie-parser cors dotenv express ioredis jsonwebtoken mongoose
-    Above dependencies are used at production also so they are installed as prod dependency
+-> npm i bcryptjs cookie-parser cors dotenv express ioredis jsonwebtoken mongoose  
+    envalid
+    Above dependencies are used at production also so they are installed as 
+    prod dependency
 -> npm i --save-dev @types/bcryptjs @types/cookie-parser @types/cors @types/express 
     @types/jsonwebtoken @types/node ts-node-dev typescript
 
@@ -39,6 +41,19 @@ Note:
         
         diff b/t ts-node & ts-node-dev:
             ts-node-dev dependency is a extension of ts-node feature that does the job of the ts-node automatically whenever there is change in the code is detected
+        
+        Note:
+            "dev":"ts-node-dev --respawn --transpile-only server.js"
+            we have added the above in the script area of package.json file 
+            Reason:
+                we know that ts-node-dev is used to autmatically convert the ts file to js file --respawn and --transpile-only are the parameters used with the ts-node-dev dependency
+
+                --respawn in ts-node-dev is used ts-node-dev will automatically restart the application
+
+                --transpile-only used to skips type checking and only transpiles TypeScript files
     
     ioredis:
         Popular Node.js library used for working with Redis, which is an in-memory data structure store,redis is often used as a caching mechanism, message broker, and general-purpose key-value store. 
+    
+    envalid:
+        envalid helps ensure that your application's configuration is correctly set up and avoids common issues related to missing or improperly configured environment variables. It's especially useful in environments like containers or platforms where configuration is often provided through environment variables.
