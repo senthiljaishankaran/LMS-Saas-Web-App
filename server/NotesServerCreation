@@ -57,3 +57,27 @@ Note:
     
     envalid:
         envalid helps ensure that your application's configuration is correctly set up and avoids common issues related to missing or improperly configured environment variables. It's especially useful in environments like containers or platforms where configuration is often provided through environment variables.
+
+    CaptureStackTrace in Node js:
+        call stack is data structure that keeps track of sequence of function calls that has been made in course of execcuting the program
+
+        capture stack trace refers to the process of collecting information about the current call stack of a program at a particular point in time.
+
+        Each function call is represented by a stack frame
+
+        when explicitly requested, Node.js can capture a stack trace to provide information about where the error or specific point of interest in the code occurred.
+
+        captureStackTrace() is amethod available in Error class to provide it
+    
+    Middle-ware function:
+        It refers to functions or pieces of software that have access to the request and response objects in an HTTP application. Middleware functions can perform various tasks, modify the request and response objects, end the request-response cycle, or call the next middleware in the stack.
+
+        Middleware functions are executed in the order they are defined, and they play a crucial role in handling HTTP requests in a modular and extensible way
+    
+    Error Handling Brief:(approach in this project)
+        Here we use an Error handler that extends Error class ,also we define the custom constructor with message property available in error class and a new
+        property called status code to define the error of how it will be looking
+
+        Then we used middle-ware(it will have object related to res,req,next and an error) to extract and use the parameters for validation and create a new error using the error handler that we created
+
+        Then an simple async function error handler in re-usable and concise code with out try,catch block
