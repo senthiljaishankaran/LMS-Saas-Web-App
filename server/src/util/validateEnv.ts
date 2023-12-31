@@ -1,9 +1,10 @@
 import { cleanEnv } from 'envalid'
-import { port,url } from 'envalid/dist/validators'
+import { port,url,str } from 'envalid/dist/validators'
 
 export default cleanEnv(process.env,{
     PORT:port(),
     ORIGIN:url(),
     DB_URL:url(),
-    REDIS_URL:url()
+    REDIS_URL:url(),
+    ACTIVATION_SECRET:str()
 })
