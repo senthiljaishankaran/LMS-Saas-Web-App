@@ -81,3 +81,68 @@ Note:
         Then we used middle-ware(it will have object related to res,req,next and an error) to extract and use the parameters for validation and create a new error using the error handler that we created
 
         Then an simple async function error handler in re-usable and concise code with out try,catch block
+
+    Types of Export:
+        1. Named Export (while importing this we need to use curely braces {})
+            when the function is written as below it is called Named Export
+            sample:
+                export const anyFunction=()=>{
+
+                }
+        2. Default Export (we can import it directly no curely braces required)
+            const anyFunction=()=>{
+
+            }
+            export default anyFunction
+
+    EJS(Embedded JavaScript):
+        "Embedded JavaScript" typically refers to the usage of JavaScript code within HTML documents. 
+        
+        This is commonly associated with the use of templating engines or frameworks that allow dynamic content to be generated on the server side and then rendered in the browser.
+
+        One popular example of embedded JavaScript is the use of <script> tags within HTML files
+    
+    Basic Html Infos:
+
+        HTTP Equiv,Refresh and Charset definition:
+            <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+
+                <meta> - tag is used to provide metadata about the HTML document. 
+                    Metadata is information about the data contained in the HTML document, and it is not displayed to the user but is used by browsers and other web services.
+                
+                http-equiv is an attribute used within meta tag to provide Http Header information to content attribute
+                    
+                here content type is given as text/html to content attribute by http-equiv
+                    
+                charset defines the character encoding ie..UTF-8 
+                    
+                    UTF-unicode transformation format is the format that is used to encode the data refers to the process of 
+                    converting data from one format to another. 
+                    
+                    This transformation is often necessary to represent information in a way that is suitable for storage, transmission, or processing
+            
+            <meta http-equiv="refresh" content="5;url=https://example.com">
+                
+                This meta tag is used to automatically refresh or redirect the page after a specified time. 
+                
+                In this example, the page will refresh after 5 seconds and redirect to "https://example.com".
+
+        Viewport Configuration (for Responsive Design):
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                This meta tag is commonly used for making web pages responsive on mobile devices. 
+                
+                It sets the width of the viewport to the device width and sets the initial zoom level to 1.0.
+
+        Description and Keywords for Search Engines:
+           
+            <meta name="description" content="A brief description of the page">
+            <meta name="keywords" content="keyword1, keyword2, keyword3">
+
+                These meta tags provide information about the content of the page. Search engines may use this information for indexing and displaying search results.
+
+
+
+
+        

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LMS-Saas-Web-App</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                margin: 5;
+                padding: 5;
+                min-width: 100;
+                font-family: Arial, Helvetica, sans-serif;
+                line-height: 1.5;
+                font-size: 16px;
+                background-color: white;
+                color: black;
+            }
+            a{
+                color: black;
+                text-decoration: none;
+            }
+            h1{
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1.25;
+                margin-top: 0;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            p{
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+            table td{
+                vertical-align: top;
+            }
+            .email-wrapper{
+                max-width: 600px;
+                margin: 0;
+            }
+            .email-header{
+                background-color: blue;
+                padding: 24px;
+                color: white;
+            }
+            .email-body{
+                padding: 24px;
+                color: white;
+            }
+            .email-footer{
+                padding: 24px;
+                color: white;
+            }
+            .button{
+                display:inline-block;
+                background-color: blue;
+                color: white;
+                font-size: 16px;
+                font-weight: 700;
+                text-align: center;
+                text-decoration: none;
+                padding: 12px 24px;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="email-wrapper">
+            <div class="email-header">
+                Greetings from the LMS
+            </div>
+            <div class="email-body">
+                <p> Hello<%= user.name %>,</p>
+                <p> Thank you for registering with us, please use the following code to activate the account</p>
+                <p><%= activationCode %></p>
+                <p> This code will expire in 5minutes</p>    
+            </div>
+            <div class="email-footer">
+                <p>For any query contact us <a href="info@lms,org"></a></p>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!--
+    <style> is used to define CSS rules that can be applied to the elements of the page
+        body{} for body tag, p{} for para tag,a{} for anchor link tag,table td{} for table tag
+
+        Parameters specified inside those style tag method will scale the rule for the CSS of the corresponding tags
+
+        example: body{} style rules will set CSS rule for the body tag like wise
+        
+        whenever we start with dot'.' it will be considered as the CSS class that an be used inside div tag
+
+        <p> Hello<%= user.name %>,</p> this is the syntax used to generate dynamic content
+
+-->

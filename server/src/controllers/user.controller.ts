@@ -5,6 +5,8 @@ import { CatchAsyncError } from "../middleware/catchAsyncError";
 import userModel from "../models/user.model";
 import jwt, { Secret } from "jsonwebtoken";
 import env from "../util/validateEnv";
+import ejs from 'ejs'
+import path from "path";
 
 // creating an interface for the user registration
 interface RegisterUserInterface {
@@ -44,6 +46,8 @@ export const registerUser = CatchAsyncError(
       const activationCode=activationToken.activationCode
 
       const userData={user:{name:user.name},activationCode}
+
+      const htmlMailRender= await ejs.renderFile(path.join(__dirname,"../tempate/activationMail.ejs"),userData)
 
     } catch (error: any) {
       return next(new ErrorHandler(error.message, 400));
